@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+
+  --color-paper: #f3efe6;
+  --color-sheet: #faf7f2;
+  --color-ink: #1c1915;
+  --color-muted: #6f675c;
+  --color-faint: #948b7e;
+  --color-line: #e3dacd;
+  --color-chip: #efe8dc;
+  --color-land: #e7e0d4;
+  --color-ocean: #c5d7e2;
+  --color-graticule: #a9c0ce;
+  --color-stroke: #2a241e;
+  --color-copper: #9a3f24;
+  --color-on-copper: #fff8f3;
+
+  --shadow-float: 0 16px 40px rgb(48 32 18 / 0.12), 0 2px 6px rgb(48 32 18 / 0.05);
+  --radius-3xl: 1.5rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.press {
+  transition:
+    scale 150ms ease-out,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.press:active {
+  scale: 0.96;
+}
+
+.map-svg {
+  cursor: grab;
+  touch-action: none;
+}
+
+.map-svg.is-panning,
+.map-svg.is-panning .country {
+  cursor: grabbing;
+}
+
+.ocean {
+  fill: var(--color-ocean);
+}
+
+.graticule {
+  fill: none;
+  stroke: var(--color-graticule);
+  stroke-width: 0.7;
+  vector-effect: non-scaling-stroke;
+}
+
+.country {
+  stroke: var(--color-stroke);
+  stroke-width: 0.45;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  cursor: pointer;
+  transition:
+    fill 420ms ease,
+    stroke-width 160ms ease;
+}
+
+.country.is-hot {
+  stroke-width: 1.45;
+}
+
+.country.is-selected {
+  stroke-width: 2;
+}
+
+.bar-fill {
+  transition:
+    width 420ms ease,
+    background-color 420ms ease;
+}
+
+.sheet {
+  transition: transform 260ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  width: 13.5rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.scroll-quiet {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .press,
+  .country,
+  .bar-fill,
+  .sheet,
+  .tip {
+    transition: none;
+  }
+}

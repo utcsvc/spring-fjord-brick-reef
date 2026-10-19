@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Полюс — атлас стран",
+      "hasCanvas": false,
+      "bodyTextLen": 3762,
+      "bodyTextHash": "73e46a2fd2c1c354f9507b749636986e91bd5ce8c1355f27c0f33c327c18063f",
+      "bodyTextPrefix": "Полюс Атлас стран Показатель Продолжительность жизни ВВП на душу",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Полюс — атлас стран",
+      "hasCanvas": false,
+      "bodyTextLen": 102,
+      "bodyTextHash": "6eca7078f76174d79fc5e36920c60fcec7dfb46a498ee0a2a4ba4e3651411fdb",
+      "bodyTextPrefix": "Полюс Продолжительность жизни Страны Жизнь ВВП Города Свет CO₂ С",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
